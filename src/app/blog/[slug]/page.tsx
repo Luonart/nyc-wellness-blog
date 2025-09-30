@@ -53,7 +53,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           title: post.title,
           description: post.description,
           type: 'article',
-          publishedTime: post.date,
           images: post.heroImage ? [
             {
               url: post.heroImage,
