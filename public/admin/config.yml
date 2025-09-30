@@ -2,11 +2,6 @@ backend:
   name: github
   repo: Luonart/nyc-wellness-blog
   branch: main
-  base_url: https://api.github.com
-  auth_endpoint: https://api.github.com/authorizations
-  app_id: Ov23lijbpUTRlE9r3cBv
-  auth_type: pkce
-  auth_scope: repo
 
 # Enable editorial workflow for draft posts
 publish_mode: editorial_workflow
