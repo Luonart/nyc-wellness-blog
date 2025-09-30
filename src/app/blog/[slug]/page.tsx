@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getPostBySlug, getAllPosts } from '@/lib/content'
@@ -46,23 +45,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <NextSeo
-        title={post.title}
-        description={post.description}
-        openGraph={{
-          title: post.title,
-          description: post.description,
-          type: 'article',
-          images: post.heroImage ? [
-            {
-              url: post.heroImage,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ] : undefined,
-        }}
-      />
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}

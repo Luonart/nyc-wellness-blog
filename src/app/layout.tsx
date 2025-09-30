@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-import { DefaultSeo } from 'next-seo'
-import { defaultSEO } from '../../next-seo.config'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import './globals.css'
@@ -56,7 +54,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <DefaultSeo {...defaultSEO} />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <script

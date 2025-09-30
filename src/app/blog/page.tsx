@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { getAllPosts, getAllTags } from '@/lib/content'
 import { format } from 'date-fns'
@@ -9,14 +8,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <NextSeo
-        title="Blog"
-        description="Discover affordable wellness solutions in New York City through our comprehensive blog posts covering fitness, mental health, nutrition, and community resources."
-        openGraph={{
-          title: 'Blog | NYC Wellness on a Budget',
-          description: 'Discover affordable wellness solutions in New York City through our comprehensive blog posts covering fitness, mental health, nutrition, and community resources.',
-        }}
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}

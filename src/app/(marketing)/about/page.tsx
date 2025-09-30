@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo'
 import { getPageBySlug } from '@/lib/content'
 import Prose from '@/components/Prose'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -22,14 +21,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <NextSeo
-        title="About"
-        description={aboutPage.description}
-        openGraph={{
-          title: 'About | NYC Wellness on a Budget',
-          description: aboutPage.description,
-        }}
-      />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <header className="mb-8">

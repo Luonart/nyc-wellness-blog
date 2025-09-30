@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { getPageBySlug } from '@/lib/content'
 import Prose from '@/components/Prose'
@@ -11,22 +10,6 @@ export default function HomePage() {
 
   return (
     <>
-      <NextSeo
-        title="NYC Wellness on a Budget"
-        description="Discover affordable wellness solutions in New York City. From budget-friendly fitness classes to free meditation sessions, find your path to wellness without breaking the bank."
-        openGraph={{
-          title: 'NYC Wellness on a Budget',
-          description: 'Discover affordable wellness solutions in New York City. From budget-friendly fitness classes to free meditation sessions, find your path to wellness without breaking the bank.',
-          images: [
-            {
-              url: '/uploads/hero-image.jpg',
-              width: 1200,
-              height: 630,
-              alt: 'NYC Wellness on a Budget',
-            },
-          ],
-        }}
-      />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-20">
