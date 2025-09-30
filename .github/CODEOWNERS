@@ -1,0 +1,15 @@
+# Global code owners
+* @tech-owner
+
+# Content files owned by content team
+/content/ @content-team
+
+# Source code owned by tech team
+/src/ @tech-owner
+
+# Configuration files owned by tech team
+*.json @tech-owner
+*.js @tech-owner
+*.ts @tech-owner
+*.yml @tech-owner
+*.yaml @tech-owner

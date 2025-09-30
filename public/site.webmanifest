@@ -1,0 +1,21 @@
+{
+  "name": "NYC Wellness on a Budget",
+  "short_name": "NYC Wellness",
+  "description": "Discover affordable wellness solutions in New York City",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

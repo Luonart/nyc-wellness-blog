@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block admin interface from search engines
+Disallow: /admin/
+
+Sitemap: https://your-domain.vercel.app/sitemap.xml
