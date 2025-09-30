@@ -1,10 +1,10 @@
 backend:
   name: github
-  repo: your-username/your-repo-name # Replace with your GitHub username and repo name
-  branch: main # Replace with your default branch name
+  repo: Luonart/nyc-wellness-blog
+  branch: main
   base_url: https://api.github.com
   auth_endpoint: https://api.github.com/authorizations
-  app_id: YOUR_GITHUB_APP_ID # Replace with your GitHub App ID
+  app_id: Ov23lijbpUTRlE9r3cBv
   auth_type: pkce
 
 # Enable editorial workflow for draft posts
@@ -15,7 +15,7 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 # Site URL for previews
-site_url: https://your-domain.vercel.app # Replace with your actual domain
+site_url: https://nyc-wellness-blog.vercel.app
 
 # Collections configuration
 collections:
@@ -46,4 +46,4 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
 
 # Display configuration
-display_url: https://your-domain.vercel.app # Replace with your actual domain
+display_url: https://nyc-wellness-blog.vercel.app
