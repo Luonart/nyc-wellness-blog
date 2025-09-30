@@ -3,19 +3,14 @@ backend:
   repo: Luonart/nyc-wellness-blog
   branch: main
 
-# Enable editorial workflow for draft posts
 publish_mode: editorial_workflow
 
-# Media folder configuration
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-# Site URL for previews
 site_url: https://nyc-wellness-blog.vercel.app
 
-# Collections configuration
 collections:
-  # Pages collection
   - name: "pages"
     label: "Pages"
     folder: "content/pages"
@@ -26,7 +21,6 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  # Blog posts collection
   - name: "posts"
     label: "Blog Posts"
     folder: "content/posts"
@@ -40,6 +34,3 @@ collections:
       - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}
-
-# Display configuration
-display_url: https://nyc-wellness-blog.vercel.app
