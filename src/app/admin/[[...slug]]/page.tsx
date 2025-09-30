@@ -1,26 +1,142 @@
+import { TinaCMS } from 'tinacms'
+
+// TinaCMS configuration
+const tinaConfig = {
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN,
+  branch: 'main',
+  build: {
+    outputFolder: 'admin',
+    publicFolder: 'public',
+  },
+  media: {
+    tina: {
+      mediaRoot: 'uploads',
+      publicFolder: 'public',
+    },
+  },
+  schema: {
+    collections: [
+      {
+        name: 'post',
+        label: 'Posts',
+        path: 'content/posts',
+        fields: [
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Title',
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'description',
+            label: 'Description',
+            required: true,
+          },
+          {
+            type: 'datetime',
+            name: 'date',
+            label: 'Date',
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'tags',
+            label: 'Tags',
+            list: true,
+          },
+          {
+            type: 'image',
+            name: 'heroImage',
+            label: 'Hero Image',
+          },
+          {
+            type: 'boolean',
+            name: 'draft',
+            label: 'Draft',
+          },
+          {
+            type: 'rich-text',
+            name: 'body',
+            label: 'Body',
+            isBody: true,
+          },
+        ],
+      },
+      {
+        name: 'page',
+        label: 'Pages',
+        path: 'content/pages',
+        fields: [
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Title',
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'description',
+            label: 'Description',
+            required: true,
+          },
+          {
+            type: 'rich-text',
+            name: 'body',
+            label: 'Body',
+            isBody: true,
+          },
+        ],
+      },
+    ],
+  },
+}
+
 export default function AdminPage() {
-  return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            TinaCMS Admin
-          </h1>
-          <p className="text-gray-600 mb-4">
-            TinaCMS will be loaded here once configured
-          </p>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md mx-auto">
-            <p className="text-blue-800 text-sm">
-              To complete setup:
+  // Check if environment variables are set
+  if (!process.env.NEXT_PUBLIC_TINA_CLIENT_ID || !process.env.TINA_TOKEN) {
+    return (
+      <div className="min-h-screen bg-gray-100">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">
+              TinaCMS Admin
+            </h1>
+            <p className="text-gray-600 mb-4">
+              Environment variables not configured
             </p>
-            <ol className="text-blue-800 text-sm text-left mt-2 space-y-1">
-              <li>1. Add environment variables to Vercel</li>
-              <li>2. Redeploy the site</li>
-              <li>3. Visit this page again</li>
-            </ol>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-md mx-auto">
+              <p className="text-red-800 text-sm">
+                Missing environment variables:
+              </p>
+              <ul className="text-red-800 text-sm text-left mt-2 space-y-1">
+                <li>• NEXT_PUBLIC_TINA_CLIENT_ID</li>
+                <li>• TINA_TOKEN</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    )
+  }
+
+  return (
+    <TinaCMS {...tinaConfig}>
+      <div className="min-h-screen bg-gray-100">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">
+              TinaCMS Admin
+            </h1>
+            <p className="text-gray-600">
+              Content management interface loading...
+            </p>
+          </div>
+        </div>
+      </div>
+    </TinaCMS>
   )
 }
