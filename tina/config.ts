@@ -59,7 +59,6 @@ export default defineConfig({
             type: 'boolean',
             name: 'draft',
             label: 'Draft',
-            default: true,
           },
           {
             type: 'rich-text',
